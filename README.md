@@ -438,6 +438,7 @@ server {
     # requires running with --set-xauthrequest flag
     auth_request_set $user   $upstream_http_x_auth_request_user;
     auth_request_set $email  $upstream_http_x_auth_request_email;
+    auth_request_set $groups $upstream_http_x_auth_request_groups; #can be used for azure ad groups claim
     proxy_set_header X-User  $user;
     proxy_set_header X-Email $email;
 
