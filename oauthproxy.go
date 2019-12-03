@@ -736,6 +736,10 @@ func (p *OAuthProxy) Authenticate(rw http.ResponseWriter, req *http.Request) int
 		if session.Email != "" {
 			rw.Header().Set("X-Auth-Request-Email", session.Email)
 		}
+                if session.Groups != "" {
+			rw.Header().Set("X-Auth-Request-Groups", session.Groups);
+		}
+
 	}
 
 	if p.PassAccessToken && session.AccessToken != "" {
