@@ -598,7 +598,7 @@ func (p *OAuthProxy) OAuthCallback(rw http.ResponseWriter, req *http.Request) {
 		session.Groups = strings.Join(groupNames, p.GroupsDelimiter)
 	}
 
-	redirect = req.Form.Get("state")
+	//redirect = req.Form.Get("state")
 	if !strings.HasPrefix(redirect, "/") || strings.HasPrefix(redirect, "//") {
 		redirect = "/"
 	}
